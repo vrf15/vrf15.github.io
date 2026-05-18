@@ -31,11 +31,20 @@ body {
   color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 0;
+  line-height: 1.5;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+p {
+  max-width: 62ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .site-header {
@@ -53,26 +62,14 @@ a {
   backdrop-filter: blur(18px);
 }
 
-.brand {
+.site-title {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  max-width: 48ch;
   font-weight: 700;
   min-height: 40px;
-}
-
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 38px;
-  height: 38px;
-  border: 1px solid var(--line-strong);
-  border-radius: 50%;
-  background: var(--surface-strong);
-}
-
-.brand-text {
   color: var(--text);
+  line-height: 1.2;
 }
 
 .site-nav {
@@ -144,6 +141,11 @@ main {
   min-width: 0;
 }
 
+.hero-copy {
+  display: grid;
+  gap: 22px;
+}
+
 .eyebrow,
 .card-kicker {
   margin: 0 0 12px;
@@ -159,6 +161,7 @@ h2,
 h3 {
   margin: 0;
   letter-spacing: 0;
+  overflow-wrap: break-word;
 }
 
 h1 {
@@ -175,6 +178,27 @@ h2 {
 h3 {
   font-size: 1.25rem;
   line-height: 1.2;
+}
+
+.hero-text {
+  font-size: 1.08rem;
+}
+
+.page-hero {
+  gap: 0;
+  min-height: 36vh;
+  align-content: center;
+}
+
+.hero-copy .eyebrow {
+  margin-bottom: 0;
+}
+
+.page-hero > p:not(.eyebrow),
+.section-heading > p:not(.eyebrow),
+.project-card > p:not(.card-kicker),
+.outline-block > p:not(.eyebrow) {
+  margin-top: 14px;
 }
 
 .dashboard-frame {
@@ -229,12 +253,35 @@ h3 {
 }
 
 .project-card,
+.option-card,
 .outline-block {
   min-height: 180px;
   padding: 22px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: rgba(22, 25, 27, 0.76);
+}
+
+.project-card,
+.option-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.option-card {
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+.option-card:hover,
+.option-card:focus-visible {
+  border-color: var(--line-strong);
+  background: var(--surface-strong);
+  transform: translateY(-2px);
+  outline: none;
 }
 
 .outline-block {
@@ -251,6 +298,10 @@ h3 {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
+}
+
+.split-section .section-heading p:not(.eyebrow) {
+  max-width: 34ch;
 }
 
 .site-footer {
@@ -309,6 +360,10 @@ h3 {
     padding: 14px 16px;
   }
 
+  .site-title {
+    max-width: 15rem;
+  }
+
   main {
     padding-right: 16px;
     padding-left: 16px;
@@ -316,6 +371,7 @@ h3 {
 
   h1 {
     font-size: 3rem;
+    line-height: 1;
   }
 
   .frame-grid {
