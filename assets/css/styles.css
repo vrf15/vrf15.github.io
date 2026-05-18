@@ -26,7 +26,7 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.04), transparent 28rem),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.035), transparent 24rem),
     var(--bg);
   color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
@@ -119,20 +119,19 @@ p {
 main {
   width: min(100%, var(--max-width));
   margin: 0 auto;
-  padding: 0 clamp(18px, 4vw, 48px) 72px;
+  padding: 0 clamp(18px, 4vw, 48px) 64px;
 }
 
 .hero,
 .page-hero {
   display: grid;
-  gap: 32px;
-  min-height: 54vh;
-  padding: clamp(64px, 10vw, 118px) 0 clamp(48px, 8vw, 86px);
+  gap: clamp(28px, 5vw, 56px);
+  padding: clamp(48px, 8vw, 84px) 0 clamp(36px, 6vw, 56px);
   align-items: center;
 }
 
 .hero {
-  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.78fr);
 }
 
 .hero-copy,
@@ -143,7 +142,7 @@ main {
 
 .hero-copy {
   display: grid;
-  gap: 22px;
+  gap: 18px;
 }
 
 .eyebrow,
@@ -165,14 +164,14 @@ h3 {
 }
 
 h1 {
-  max-width: 780px;
-  font-size: clamp(3.2rem, 7vw, 6.5rem);
-  line-height: 0.95;
+  max-width: 720px;
+  font-size: clamp(2.75rem, 5.4vw, 4.9rem);
+  line-height: 1;
 }
 
 h2 {
-  font-size: clamp(1.75rem, 3vw, 3rem);
-  line-height: 1;
+  font-size: clamp(1.55rem, 2.4vw, 2.35rem);
+  line-height: 1.08;
 }
 
 h3 {
@@ -181,12 +180,47 @@ h3 {
 }
 
 .hero-text {
+  max-width: 58ch;
   font-size: 1.08rem;
+  color: #c8cdcf;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.button-link.primary {
+  border-color: var(--line-strong);
+  background: var(--text);
+  color: var(--bg);
+}
+
+.button-link:hover,
+.button-link:focus-visible {
+  border-color: var(--accent);
+  outline: none;
 }
 
 .page-hero {
   gap: 0;
-  min-height: 36vh;
+  min-height: 30vh;
   align-content: center;
 }
 
@@ -201,92 +235,167 @@ h3 {
   margin-top: 14px;
 }
 
-.dashboard-frame {
-  min-height: 340px;
+.system-visual {
+  align-self: stretch;
+  display: flex;
+  min-height: 300px;
+}
+
+.system-panel {
+  display: grid;
+  gap: 18px;
+  width: 100%;
+  margin: auto 0;
+  padding: 18px;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius);
-  background: linear-gradient(180deg, var(--surface-strong), var(--surface));
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
-  overflow: hidden;
-}
-
-.frame-bar {
-  height: 48px;
-  border-bottom: 1px solid var(--line);
   background:
-    linear-gradient(90deg, var(--line-strong) 0 16%, transparent 16% 20%, var(--line) 20% 34%, transparent 34% 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent),
     var(--surface);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
 }
 
-.frame-grid {
+.panel-header {
+  display: flex;
+  gap: 8px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.panel-header span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--line-strong);
+}
+
+.system-flow {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  grid-auto-rows: minmax(112px, 1fr);
-  gap: 12px;
-  padding: 16px;
+  grid-template-columns: 1fr 28px 1fr 28px 1fr;
+  align-items: center;
+  gap: 8px;
 }
 
-.frame-grid span {
+.flow-node {
+  min-height: 76px;
+  padding: 14px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
+  background: rgba(13, 15, 16, 0.54);
+}
+
+.flow-node span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--subtle);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.flow-node strong {
+  color: var(--text);
+  font-size: 0.96rem;
+}
+
+.flow-line {
+  height: 1px;
+  background: var(--line-strong);
+}
+
+.signal-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 0.8fr;
+  grid-auto-rows: 42px;
+  gap: 10px;
+}
+
+.signal-grid span {
+  border: 1px solid var(--line);
+  border-radius: 6px;
   background:
-    repeating-linear-gradient(90deg, transparent 0 14px, rgba(255, 255, 255, 0.04) 14px 15px),
-    var(--surface);
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08), transparent 58%),
+    rgba(13, 15, 16, 0.42);
+}
+
+.signal-grid .signal-wide {
+  grid-column: span 2;
+}
+
+.signal-grid .signal-tall {
+  grid-row: span 2;
 }
 
 .section-shell,
 .outline-grid {
-  padding: clamp(36px, 6vw, 72px) 0;
+  padding: clamp(32px, 5vw, 56px) 0;
   border-top: 1px solid var(--line);
 }
 
 .card-grid,
+.capability-grid,
+.work-grid,
 .outline-grid,
 .split-section {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
 
+.card-grid,
+.work-grid,
+.outline-grid,
+.split-section {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.capability-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .section-heading {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .project-card,
-.option-card,
+.capability-card,
 .outline-block {
-  min-height: 180px;
-  padding: 22px;
+  min-height: 164px;
+  padding: 20px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: rgba(22, 25, 27, 0.76);
 }
 
 .project-card,
-.option-card {
+.capability-card {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 
-.option-card {
+.capability-card {
   transition:
     border-color 160ms ease,
     background 160ms ease,
     transform 160ms ease;
 }
 
-.option-card:hover,
-.option-card:focus-visible {
+.capability-card:hover,
+.capability-card:focus-visible {
   border-color: var(--line-strong);
   background: var(--surface-strong);
   transform: translateY(-2px);
   outline: none;
 }
 
+.work-grid .project-card {
+  min-height: 176px;
+}
+
 .outline-block {
   display: flex;
-  min-height: 210px;
+  min-height: 188px;
   flex-direction: column;
   justify-content: flex-end;
 }
@@ -304,6 +413,52 @@ h3 {
   max-width: 34ch;
 }
 
+.roadmap-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.roadmap-list {
+  display: grid;
+  gap: 10px;
+}
+
+.roadmap-list article {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 0.55fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+
+.roadmap-list article:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.roadmap-list span {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--subtle);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.roadmap-list h3 {
+  font-size: 1rem;
+}
+
+.roadmap-list p {
+  font-size: 0.95rem;
+}
+
 .site-footer {
   display: flex;
   justify-content: space-between;
@@ -311,6 +466,14 @@ h3 {
   padding: 28px clamp(18px, 4vw, 48px);
   border-top: 1px solid var(--line);
   color: var(--subtle);
+}
+
+@media (max-width: 1060px) {
+  .capability-grid,
+  .card-grid,
+  .work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 860px) {
@@ -344,14 +507,28 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .dashboard-frame {
-    min-height: 280px;
+  .system-visual {
+    min-height: 0;
   }
 
   .card-grid,
+  .capability-grid,
+  .work-grid,
   .outline-grid,
   .split-section {
     grid-template-columns: 1fr;
+  }
+
+  .roadmap-section {
+    grid-template-columns: 1fr;
+  }
+
+  .roadmap-list article {
+    grid-template-columns: 42px minmax(0, 1fr);
+  }
+
+  .roadmap-list p {
+    grid-column: 2;
   }
 }
 
@@ -370,12 +547,30 @@ h3 {
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 2.65rem;
     line-height: 1;
   }
 
-  .frame-grid {
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .system-flow,
+  .signal-grid {
     grid-template-columns: 1fr;
+  }
+
+  .flow-line {
+    width: 1px;
+    height: 22px;
+    margin: 0 auto;
+  }
+
+  .signal-grid .signal-wide,
+  .signal-grid .signal-tall {
+    grid-column: auto;
+    grid-row: auto;
   }
 
   .site-footer {
