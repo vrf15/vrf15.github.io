@@ -615,6 +615,17 @@ body[data-page="home"] .footer-links a {
   min-height: 158px;
 }
 
+body[data-page="home"] .work-grid .project-card {
+  min-height: 248px;
+  padding: clamp(20px, 2.5vw, 24px);
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+body[data-page="home"] .work-grid .project-card .tag-list {
+  margin-top: auto;
+}
+
 .outline-block {
   display: flex;
   min-height: 188px;
