@@ -128,6 +128,10 @@ main {
   padding: 0 clamp(18px, 4vw, 48px) 64px;
 }
 
+.home-main {
+  padding-bottom: 72px;
+}
+
 .hero,
 .page-hero {
   display: grid;
@@ -140,6 +144,13 @@ main {
   grid-template-columns: minmax(0, 1fr) minmax(280px, 0.78fr);
 }
 
+.home-hero {
+  display: grid;
+  min-height: 42vh;
+  padding: clamp(64px, 10vw, 112px) 0 clamp(40px, 7vw, 72px);
+  align-items: end;
+}
+
 .hero-copy,
 .section-heading,
 .page-hero {
@@ -149,6 +160,10 @@ main {
 .hero-copy {
   display: grid;
   gap: 18px;
+}
+
+.home-hero .hero-copy {
+  max-width: 880px;
 }
 
 .eyebrow,
@@ -189,6 +204,11 @@ h3 {
   max-width: 58ch;
   font-size: 1.08rem;
   color: #c8cdcf;
+}
+
+.home-hero .hero-text {
+  max-width: 66ch;
+  font-size: clamp(1.08rem, 1.4vw, 1.24rem);
 }
 
 .hero-actions {
@@ -365,6 +385,11 @@ h3 {
   margin-bottom: 20px;
 }
 
+.compact-heading {
+  max-width: 720px;
+  margin-bottom: 18px;
+}
+
 .project-card,
 .capability-card,
 .outline-block {
@@ -389,6 +414,19 @@ h3 {
     transform 160ms ease;
 }
 
+.path-grid .capability-card {
+  min-height: 220px;
+  padding: clamp(22px, 3vw, 28px);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent),
+    rgba(22, 25, 27, 0.86);
+}
+
+.path-grid .capability-card h3 {
+  max-width: 12ch;
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+}
+
 .capability-card:hover,
 .capability-card:focus-visible {
   border-color: var(--line-strong);
@@ -402,6 +440,10 @@ h3 {
   color: var(--subtle);
   font-size: 0.84rem;
   font-weight: 700;
+}
+
+.home-roadmap {
+  padding-bottom: 0;
 }
 
 .work-grid .project-card {
@@ -489,8 +531,19 @@ h3 {
   gap: 16px;
 }
 
+.footer-line {
+  width: 100%;
+  gap: 10px;
+  justify-content: center;
+}
+
 .footer-links a {
   color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.footer-line span {
+  color: var(--subtle);
   font-size: 0.94rem;
 }
 
