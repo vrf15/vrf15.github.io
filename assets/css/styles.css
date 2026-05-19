@@ -38,13 +38,13 @@ body[data-page="home"] {
   color-scheme: light;
   --bg: #F5F0E6;
   --surface: #FFF9EE;
-  --primary: #4F7528;
-  --primary-dark: #35551A;
-  --primary-hover: #2B4615;
-  --sage: #9FBF7A;
-  --border: #7FA05A;
-  --text: #182412;
-  --muted: #4F6340;
+  --primary: #078148;
+  --primary-dark: #056638;
+  --primary-hover: #044F2C;
+  --sage: #8FBE9F;
+  --border: #6EA982;
+  --text: #102116;
+  --muted: #4C6654;
   --surface-strong: #EEF4DF;
   --line: var(--border);
   --line-strong: var(--primary-dark);
@@ -186,8 +186,8 @@ main {
 
 .home-hero {
   display: grid;
-  min-height: 30vh;
-  padding: clamp(28px, 6vw, 60px) 0 clamp(28px, 5vw, 44px);
+  min-height: 26vh;
+  padding: clamp(20px, 4vw, 44px) 0 clamp(28px, 5vw, 44px);
   align-items: end;
 }
 
