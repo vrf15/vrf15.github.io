@@ -513,6 +513,8 @@ body[data-page="home"] .section-shell {
   border-color: transparent;
   background: var(--primary, var(--surface));
   color: var(--text);
+  justify-content: flex-start;
+  align-items: flex-start;
   box-shadow: none;
 }
 
@@ -574,7 +576,7 @@ body[data-page="home"] .project-card p:not(.card-kicker) {
 
 .stack-preview-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 12px;
 }
 
