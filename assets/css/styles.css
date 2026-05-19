@@ -72,6 +72,12 @@ p {
   line-height: 1.2;
 }
 
+.site-title:hover,
+.site-title:focus-visible {
+  color: var(--accent);
+  outline: none;
+}
+
 .site-nav {
   display: flex;
   align-items: center;
@@ -335,6 +341,7 @@ h3 {
 
 .card-grid,
 .capability-grid,
+.path-grid,
 .work-grid,
 .outline-grid,
 .split-section {
@@ -343,6 +350,7 @@ h3 {
 }
 
 .card-grid,
+.path-grid,
 .work-grid,
 .outline-grid,
 .split-section {
@@ -387,6 +395,13 @@ h3 {
   background: var(--surface-strong);
   transform: translateY(-2px);
   outline: none;
+}
+
+.path-support {
+  margin-top: 10px;
+  color: var(--subtle);
+  font-size: 0.84rem;
+  font-weight: 700;
 }
 
 .work-grid .project-card {
@@ -468,8 +483,26 @@ h3 {
   color: var(--subtle);
 }
 
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-links a {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: var(--text);
+  outline: none;
+}
+
 @media (max-width: 1060px) {
   .capability-grid,
+  .path-grid,
   .card-grid,
   .work-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -513,6 +546,7 @@ h3 {
 
   .card-grid,
   .capability-grid,
+  .path-grid,
   .work-grid,
   .outline-grid,
   .split-section {
