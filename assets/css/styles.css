@@ -36,28 +36,42 @@ body {
 
 body[data-page="home"] {
   color-scheme: light;
-  --bg: #f4efe3;
-  --surface: #fffaf0;
-  --surface-strong: #ebe5d6;
-  --line: #d4ccb9;
-  --line-strong: #8f9b72;
-  --text: #24281d;
-  --muted: #5f624f;
-  --subtle: #6f7e52;
-  --accent: #718052;
-  background:
-    linear-gradient(135deg, rgba(143, 155, 114, 0.18), transparent 28rem),
-    linear-gradient(180deg, rgba(255, 250, 240, 0.72), transparent 18rem),
-    var(--bg);
+  --bg: #F5F0E6;
+  --surface: #FFF9EE;
+  --primary: #6F8F3A;
+  --primary-dark: #4F6F2A;
+  --primary-hover: #3E5A20;
+  --sage: #B8C99A;
+  --border: #A5B879;
+  --text: #1E2A16;
+  --muted: #5D6B4A;
+  --surface-strong: #EEF4DF;
+  --line: var(--border);
+  --line-strong: var(--primary-dark);
+  --subtle: var(--primary-dark);
+  --accent: var(--primary);
+  background: var(--bg);
 }
 
 body[data-page="home"] .site-header {
-  border-bottom-color: rgba(113, 128, 82, 0.24);
-  background: rgba(244, 239, 227, 0.88);
+  border-bottom-color: var(--primary-dark);
+  background: var(--primary);
+  color: var(--surface);
+  backdrop-filter: none;
+}
+
+body[data-page="home"] .site-title {
+  color: var(--surface);
+}
+
+body[data-page="home"] .site-title:hover,
+body[data-page="home"] .site-title:focus-visible {
+  color: #ffffff;
 }
 
 body[data-page="home"] .site-footer {
-  border-top-color: rgba(113, 128, 82, 0.24);
+  border-top-color: var(--border);
+  color: var(--muted);
 }
 
 a {
@@ -449,10 +463,13 @@ h3 {
 .path-grid .capability-card {
   min-height: 220px;
   padding: clamp(22px, 3vw, 28px);
-  border-color: rgba(113, 128, 82, 0.28);
-  background:
-    linear-gradient(180deg, rgba(143, 155, 114, 0.16), transparent),
-    var(--surface);
+  border-color: var(--primary-dark, var(--line-strong));
+  background: var(--primary, var(--surface));
+  color: var(--text);
+}
+
+body[data-page="home"] .path-grid .capability-card {
+  color: var(--surface);
 }
 
 .path-grid .capability-card h3 {
@@ -462,31 +479,33 @@ h3 {
 
 .capability-card:hover,
 .capability-card:focus-visible {
-  border-color: var(--line-strong);
-  background: var(--surface-strong);
+  border-color: var(--primary-hover, var(--line-strong));
+  background: var(--primary-hover, var(--surface-strong));
   transform: translateY(-2px);
   outline: none;
 }
 
 .path-support {
   margin-top: 10px;
-  color: var(--accent);
+  color: var(--surface);
   font-size: 0.84rem;
   font-weight: 700;
 }
 
 body[data-page="home"] .project-card {
-  border-color: rgba(113, 128, 82, 0.22);
-  background: rgba(255, 250, 240, 0.86);
+  border-color: var(--border);
+  background: var(--surface);
+  color: var(--text);
 }
 
 body[data-page="home"] .roadmap-list article {
-  border-top-color: rgba(113, 128, 82, 0.24);
+  border-top-color: var(--border);
 }
 
 body[data-page="home"] .roadmap-list span {
-  border-color: rgba(113, 128, 82, 0.34);
-  color: var(--accent);
+  border-color: var(--border);
+  background: var(--sage);
+  color: var(--text);
 }
 
 .home-roadmap {
