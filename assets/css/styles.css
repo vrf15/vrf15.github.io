@@ -38,13 +38,13 @@ body[data-page="home"] {
   color-scheme: light;
   --bg: #F5F0E6;
   --surface: #FFF9EE;
-  --primary: #6F8F3A;
-  --primary-dark: #4F6F2A;
-  --primary-hover: #3E5A20;
-  --sage: #B8C99A;
-  --border: #A5B879;
-  --text: #1E2A16;
-  --muted: #5D6B4A;
+  --primary: #4F7528;
+  --primary-dark: #35551A;
+  --primary-hover: #2B4615;
+  --sage: #9FBF7A;
+  --border: #7FA05A;
+  --text: #182412;
+  --muted: #4F6340;
   --surface-strong: #EEF4DF;
   --line: var(--border);
   --line-strong: var(--primary-dark);
@@ -169,7 +169,7 @@ main {
 }
 
 .home-main {
-  padding-bottom: 72px;
+  padding-bottom: 48px;
 }
 
 .hero,
@@ -186,8 +186,8 @@ main {
 
 .home-hero {
   display: grid;
-  min-height: 42vh;
-  padding: clamp(64px, 10vw, 112px) 0 clamp(40px, 7vw, 72px);
+  min-height: 30vh;
+  padding: clamp(28px, 6vw, 60px) 0 clamp(28px, 5vw, 44px);
   align-items: end;
 }
 
@@ -255,6 +255,10 @@ h3 {
   max-width: 76ch;
   color: var(--text);
   font-size: clamp(1.04rem, 1.35vw, 1.18rem);
+}
+
+body[data-page="home"] .section-shell {
+  padding: clamp(24px, 4vw, 40px) 0;
 }
 
 .hero-actions {
@@ -461,7 +465,7 @@ h3 {
 }
 
 .path-grid .capability-card {
-  min-height: 220px;
+  min-height: 188px;
   padding: clamp(22px, 3vw, 28px);
   border-color: var(--primary-dark, var(--line-strong));
   background: var(--primary, var(--surface));
@@ -513,7 +517,7 @@ body[data-page="home"] .roadmap-list span {
 }
 
 .work-grid .project-card {
-  min-height: 176px;
+  min-height: 158px;
 }
 
 .outline-block {
