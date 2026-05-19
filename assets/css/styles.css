@@ -34,6 +34,22 @@ body {
   line-height: 1.5;
 }
 
+body[data-page="home"] {
+  --bg: #11110e;
+  --surface: #181913;
+  --surface-strong: #22241b;
+  --line: #34362a;
+  --line-strong: #566044;
+  --text: #f2eadc;
+  --muted: #c9c0ae;
+  --subtle: #9da77e;
+  --accent: #b7c291;
+  background:
+    linear-gradient(135deg, rgba(183, 194, 145, 0.1), transparent 28rem),
+    linear-gradient(180deg, rgba(242, 234, 220, 0.025), transparent 18rem),
+    var(--bg);
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -209,6 +225,12 @@ h3 {
 .home-hero .hero-text {
   max-width: 66ch;
   font-size: clamp(1.08rem, 1.4vw, 1.24rem);
+}
+
+.home-description {
+  max-width: 76ch;
+  color: var(--muted);
+  font-size: 1rem;
 }
 
 .hero-actions {
@@ -417,8 +439,9 @@ h3 {
 .path-grid .capability-card {
   min-height: 220px;
   padding: clamp(22px, 3vw, 28px);
+  border-color: rgba(183, 194, 145, 0.2);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent),
+    linear-gradient(180deg, rgba(183, 194, 145, 0.08), transparent),
     rgba(22, 25, 27, 0.86);
 }
 
@@ -437,9 +460,14 @@ h3 {
 
 .path-support {
   margin-top: 10px;
-  color: var(--subtle);
+  color: var(--accent);
   font-size: 0.84rem;
   font-weight: 700;
+}
+
+body[data-page="home"] .project-card {
+  border-color: rgba(183, 194, 145, 0.16);
+  background: rgba(24, 25, 19, 0.88);
 }
 
 .home-roadmap {
