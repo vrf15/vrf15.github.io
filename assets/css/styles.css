@@ -35,19 +35,29 @@ body {
 }
 
 body[data-page="home"] {
-  --bg: #11110e;
-  --surface: #181913;
-  --surface-strong: #22241b;
-  --line: #34362a;
-  --line-strong: #566044;
-  --text: #f2eadc;
-  --muted: #c9c0ae;
-  --subtle: #9da77e;
-  --accent: #b7c291;
+  color-scheme: light;
+  --bg: #f4efe3;
+  --surface: #fffaf0;
+  --surface-strong: #ebe5d6;
+  --line: #d4ccb9;
+  --line-strong: #8f9b72;
+  --text: #24281d;
+  --muted: #5f624f;
+  --subtle: #6f7e52;
+  --accent: #718052;
   background:
-    linear-gradient(135deg, rgba(183, 194, 145, 0.1), transparent 28rem),
-    linear-gradient(180deg, rgba(242, 234, 220, 0.025), transparent 18rem),
+    linear-gradient(135deg, rgba(143, 155, 114, 0.18), transparent 28rem),
+    linear-gradient(180deg, rgba(255, 250, 240, 0.72), transparent 18rem),
     var(--bg);
+}
+
+body[data-page="home"] .site-header {
+  border-bottom-color: rgba(113, 128, 82, 0.24);
+  background: rgba(244, 239, 227, 0.88);
+}
+
+body[data-page="home"] .site-footer {
+  border-top-color: rgba(113, 128, 82, 0.24);
 }
 
 a {
@@ -229,8 +239,8 @@ h3 {
 
 .home-description {
   max-width: 76ch;
-  color: var(--muted);
-  font-size: 1rem;
+  color: var(--text);
+  font-size: clamp(1.04rem, 1.35vw, 1.18rem);
 }
 
 .hero-actions {
@@ -439,10 +449,10 @@ h3 {
 .path-grid .capability-card {
   min-height: 220px;
   padding: clamp(22px, 3vw, 28px);
-  border-color: rgba(183, 194, 145, 0.2);
+  border-color: rgba(113, 128, 82, 0.28);
   background:
-    linear-gradient(180deg, rgba(183, 194, 145, 0.08), transparent),
-    rgba(22, 25, 27, 0.86);
+    linear-gradient(180deg, rgba(143, 155, 114, 0.16), transparent),
+    var(--surface);
 }
 
 .path-grid .capability-card h3 {
@@ -466,8 +476,17 @@ h3 {
 }
 
 body[data-page="home"] .project-card {
-  border-color: rgba(183, 194, 145, 0.16);
-  background: rgba(24, 25, 19, 0.88);
+  border-color: rgba(113, 128, 82, 0.22);
+  background: rgba(255, 250, 240, 0.86);
+}
+
+body[data-page="home"] .roadmap-list article {
+  border-top-color: rgba(113, 128, 82, 0.24);
+}
+
+body[data-page="home"] .roadmap-list span {
+  border-color: rgba(113, 128, 82, 0.34);
+  color: var(--accent);
 }
 
 .home-roadmap {
