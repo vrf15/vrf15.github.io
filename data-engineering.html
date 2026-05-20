@@ -6,7 +6,7 @@
     <meta name="description" content="Full-Stack BI Developer data engineering portfolio placeholders.">
     <title>Data Engineering | Full-Stack BI Developer</title>
     <link rel="stylesheet" href="assets/css/styles.css">
-    </head>
+  </head>
   <body data-page="data-engineering">
     <header class="site-header">
       <a class="site-title" href="index.html">VRF</a>
@@ -16,34 +16,131 @@
       <section class="page-hero">
         <p class="eyebrow">Portfolio</p>
         <h1>Data Engineering</h1>
-        <p>Project details coming soon.</p>
+        <p>Data Engineering focuses on the pipelines, storage layers, transformations, and infrastructure that prepare data for analytics, dashboards, reporting, machine learning, and downstream systems.</p>
       </section>
 
-      <section class="outline-grid">
-        <article class="outline-block">
-          <p class="eyebrow">01</p>
+      <section class="outline-grid detail-stack">
+        <article class="outline-block detail-card overview-card">
           <h2>Overview</h2>
-          <p>Project details coming soon.</p>
+          <div class="overview-copy">
+            <p>My data engineering work focuses on moving external data from raw sources into structured, analytics-ready systems. Across my projects, I have built pipelines that use API ingestion, orchestration, cloud storage, relational databases, and dbt-based transformations.</p>
+            <p>The goal is to create repeatable workflows where raw data can be collected, validated, cleaned, modeled, and prepared for dashboards, reporting, deeper analysis, machine learning preparation, or other downstream systems.</p>
+          </div>
         </article>
-        <article class="outline-block">
-          <p class="eyebrow">02</p>
+        <article class="outline-block detail-card">
           <h2>Featured Projects</h2>
-          <p>Project details coming soon.</p>
+          <div class="detail-list">
+            <section class="detail-entry">
+              <h3>WhetherX</h3>
+              <p>Weather analytics pipeline focused on forecast accuracy analysis using API ingestion, S3/RDS loading, dbt modeling, and validation checks.</p>
+            </section>
+            <section class="detail-entry">
+              <h3>SP500 Analytics</h3>
+              <p>Market-data pipeline using multiple financial APIs, Airflow orchestration, S3/RDS loading, and dbt models for analytics-ready reporting.</p>
+            </section>
+            <section class="detail-entry">
+              <h3>SmartVault</h3>
+              <p>High-level DeFi analytics infrastructure involving dlt, Airflow, dbt, structured pipeline design, and preparation of datasets that could support machine-learning inputs for smart-contract strategy development.</p>
+            </section>
+          </div>
         </article>
-        <article class="outline-block">
-          <p class="eyebrow">03</p>
+        <article class="outline-block detail-card pipeline-card">
           <h2>Pipelines</h2>
-          <p>Project details coming soon.</p>
+          <p>My pipelines usually follow a consistent structure: API ingestion, orchestration, storage, transformation, and final modeling.</p>
+          <div class="pipeline-diagram" aria-label="Pipeline flow">
+            <div class="pipeline-mainline">
+              <span class="flow-step">Airflow Orchestration</span>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <span class="flow-step">API Ingestion</span>
+              <span class="pipeline-fork" aria-hidden="true">
+                <span class="fork-line fork-line-top"></span>
+                <span class="fork-line fork-line-bottom"></span>
+              </span>
+              <span class="pipeline-branches">
+                <span class="pipeline-branch pipeline-branch-s3">
+                  <span class="flow-step branch-step">S3 Lake</span>
+                </span>
+                <span class="pipeline-branch pipeline-branch-main">
+                  <span class="flow-step">RDS PostgreSQL</span>
+                  <span class="flow-arrow" aria-hidden="true">→</span>
+                  <span class="flow-step">dbt Transformation</span>
+                  <span class="flow-arrow" aria-hidden="true">→</span>
+                  <span class="flow-step">raw</span>
+                  <span class="flow-arrow" aria-hidden="true">→</span>
+                  <span class="flow-step">stg</span>
+                  <span class="flow-arrow" aria-hidden="true">→</span>
+                  <span class="flow-step">core</span>
+                  <span class="flow-arrow" aria-hidden="true">→</span>
+                  <span class="flow-step">mart</span>
+                </span>
+              </span>
+            </div>
+          </div>
+          <p>External data is collected through API requests, then scheduled and controlled through Apache Airflow. Depending on the project, extracted data is loaded into cloud storage, database tables, or both. dlt is used where applicable to support extraction and loading workflows.</p>
+          <div class="schema-block">
+            <p class="schema-label">Schema pattern</p>
+            <div class="schema-flow" aria-label="Schema pattern">
+              <span class="schema-token">raw</span>
+              <span class="schema-arrow" aria-hidden="true">→</span>
+              <span class="schema-token">stg</span>
+              <span class="schema-arrow" aria-hidden="true">→</span>
+              <span class="schema-token">core</span>
+              <span class="schema-arrow" aria-hidden="true">→</span>
+              <span class="schema-token">mart</span>
+            </div>
+          </div>
+          <div class="schema-layers">
+            <section class="schema-layer">
+              <h3>raw</h3>
+              <p>I use the raw layer to preserve source-shaped ingested data.</p>
+            </section>
+            <section class="schema-layer">
+              <h3>staging</h3>
+              <p>In stg, I focus heavily on casting, renaming, standardizing, and making fields uniform before they move deeper into the warehouse.</p>
+            </section>
+            <section class="schema-layer">
+              <h3>core</h3>
+              <p>In core, I build more reusable modeled tables and add safety nets, checks, and flags to understand what types of imperfect or unclean data are still passing through. This helps explain possible skews later in marts, dashboards, analytics, or model-ready datasets.</p>
+            </section>
+            <section class="schema-layer">
+              <h3>mart</h3>
+              <p>The mart layer is generally dashboard-ready. Sometimes I break fact tables into smaller marts for focused dashboards, and other times I create datasets specifically prepared for machine learning workflows.</p>
+            </section>
+          </div>
         </article>
-        <article class="outline-block">
-          <p class="eyebrow">04</p>
-          <h2>Data Models</h2>
-          <p>Project details coming soon.</p>
-        </article>
-        <article class="outline-block">
-          <p class="eyebrow">05</p>
+        <article class="outline-block detail-card">
           <h2>Tools Used</h2>
-          <p>Tools to be confirmed.</p>
+          <div class="tool-list">
+            <section class="detail-entry tool-entry">
+              <h3>dlt</h3>
+              <p>Used to support extraction and loading workflows, especially when moving API-based source data into structured storage or database layers.</p>
+            </section>
+            <section class="detail-entry tool-entry">
+              <h3>dbt</h3>
+              <p>Used for SQL-based transformations, staging models, core models, mart tables, testing patterns, and building analytics-ready datasets.</p>
+            </section>
+            <section class="detail-entry tool-entry">
+              <h3>Apache Airflow</h3>
+              <p>Used to orchestrate pipeline runs, schedule ingestion jobs, control task order, and make workflows repeatable.</p>
+            </section>
+            <section class="detail-entry tool-entry">
+              <h3>Docker</h3>
+              <p>Used to containerize project environments, keep dependencies consistent, and make local development or deployment workflows easier to reproduce.</p>
+            </section>
+            <section class="detail-entry tool-entry">
+              <h3>EC2</h3>
+              <p>Used as cloud compute infrastructure for running project services, development environments, and pipeline-related workloads.</p>
+            </section>
+            <section class="detail-entry tool-entry">
+              <h3>S3 Lake</h3>
+              <p>Used as object storage for raw or semi-structured data before it is loaded, modeled, or transformed further.</p>
+            </section>
+            <section class="detail-entry tool-entry">
+              <h3>RDS PostgreSQL</h3>
+              <p>Used as the relational database layer for storing ingested data, transformed tables, and analytics-ready schemas.</p>
+            </section>
+          </div>
+          <p class="detail-note"><small>NOTE: I currently use .env files for local environment variables and secrets management during development. I am planning on incorporating Kubernetes to improve deployment structure and manage secrets more securely as projects move closer to production-style environments.</small></p>
         </article>
       </section>
     </main>

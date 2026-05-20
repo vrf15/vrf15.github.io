@@ -472,9 +472,12 @@ body[data-page="home"] .section-shell {
 .card-grid,
 .path-grid,
 .work-grid,
-.outline-grid,
 .split-section {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.outline-grid {
+  grid-template-columns: 1fr;
 }
 
 .capability-grid {
@@ -642,6 +645,232 @@ body[data-page="home"] .work-grid .project-card .tag-list {
   align-items: flex-start;
 }
 
+body[data-page="data-engineering"] .page-hero {
+  min-height: auto;
+  align-content: start;
+  gap: 8px;
+  padding: clamp(24px, 4vw, 40px) 0 clamp(22px, 4vw, 34px);
+}
+
+body[data-page="data-engineering"] .page-hero > p:not(.eyebrow) {
+  max-width: 82ch;
+  margin-left: clamp(14px, 2vw, 24px);
+  margin-top: 6px;
+}
+
+body[data-page="data-engineering"] .detail-stack {
+  gap: clamp(20px, 3vw, 28px);
+}
+
+body[data-page="data-engineering"] .detail-card {
+  width: 100%;
+  padding: clamp(24px, 4vw, 34px);
+  gap: 18px;
+}
+
+body[data-page="data-engineering"] .detail-card > h2 {
+  margin-bottom: clamp(10px, 2vw, 18px);
+}
+
+body[data-page="data-engineering"] .detail-card > p:not(.eyebrow) {
+  max-width: 78ch;
+  margin-top: 0;
+}
+
+body[data-page="data-engineering"] .overview-copy {
+  display: grid;
+  width: 100%;
+  gap: 14px;
+}
+
+body[data-page="data-engineering"] .overview-copy p {
+  max-width: 78ch;
+  margin: 0;
+  text-indent: 2.25em;
+}
+
+body[data-page="data-engineering"] .pipeline-card > p {
+  text-indent: 2.25em;
+}
+
+body[data-page="data-engineering"] .detail-list,
+body[data-page="data-engineering"] .tool-list,
+body[data-page="data-engineering"] .schema-layers {
+  display: grid;
+  width: 100%;
+  gap: 18px;
+}
+
+body[data-page="data-engineering"] .detail-entry,
+body[data-page="data-engineering"] .schema-layer {
+  width: 100%;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+body[data-page="data-engineering"] .detail-entry:first-child,
+body[data-page="data-engineering"] .schema-layer:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+body[data-page="data-engineering"] .detail-entry h3,
+body[data-page="data-engineering"] .schema-layer h3 {
+  color: var(--nav);
+  font-size: 1.04rem;
+}
+
+body[data-page="data-engineering"] .schema-layer h3 {
+  font-style: italic;
+}
+
+body[data-page="data-engineering"] .detail-entry p,
+body[data-page="data-engineering"] .schema-layer p {
+  max-width: 78ch;
+  margin-top: 7px;
+}
+
+body[data-page="data-engineering"] .pipeline-diagram {
+  width: 100%;
+  padding: 16px 0;
+  overflow-x: auto;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+body[data-page="data-engineering"] .pipeline-mainline,
+body[data-page="data-engineering"] .schema-flow {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+}
+
+body[data-page="data-engineering"] .pipeline-mainline {
+  width: max-content;
+  min-width: 100%;
+  align-items: center;
+  gap: 4px;
+  padding-bottom: 2px;
+}
+
+body[data-page="data-engineering"] .schema-flow {
+  flex-wrap: wrap;
+}
+
+body[data-page="data-engineering"] .pipeline-fork {
+  position: relative;
+  width: 22px;
+  height: 58px;
+  flex: 0 0 22px;
+}
+
+body[data-page="data-engineering"] .pipeline-fork::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 8px;
+  border-top: 2px solid var(--accent-green);
+  content: "";
+  transform: translateY(-50%);
+}
+
+body[data-page="data-engineering"] .fork-line {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  width: 18px;
+  border-top: 2px solid var(--accent-green);
+  transform-origin: left center;
+}
+
+body[data-page="data-engineering"] .fork-line-top {
+  transform: translateY(-50%) rotate(-32deg);
+}
+
+body[data-page="data-engineering"] .fork-line-bottom {
+  transform: translateY(-50%) rotate(32deg);
+}
+
+body[data-page="data-engineering"] .pipeline-branches {
+  display: grid;
+  gap: 6px;
+}
+
+body[data-page="data-engineering"] .pipeline-branch {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+body[data-page="data-engineering"] .flow-step,
+body[data-page="data-engineering"] .schema-token {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 9px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-strong);
+  color: var(--nav);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+body[data-page="data-engineering"] .flow-arrow,
+body[data-page="data-engineering"] .schema-arrow {
+  color: var(--accent-green);
+  font-weight: 700;
+}
+
+body[data-page="data-engineering"] .flow-arrow {
+  padding-top: 5px;
+  margin: 0 -1px;
+}
+
+body[data-page="data-engineering"] .branch-step {
+  min-height: 26px;
+  border-style: dashed;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+body[data-page="data-engineering"] .schema-block {
+  display: grid;
+  width: 100%;
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+body[data-page="data-engineering"] .schema-label {
+  max-width: none;
+  color: var(--accent-green);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body[data-page="data-engineering"] .schema-layer {
+  padding-left: 14px;
+  border-left: 3px solid rgba(59, 109, 17, 0.28);
+}
+
+body[data-page="data-engineering"] .detail-note {
+  width: 100%;
+  max-width: 78ch;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+body[data-page="data-engineering"] .detail-note small {
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
 .split-section .section-heading {
   min-height: 150px;
   margin-bottom: 0;
@@ -805,6 +1034,7 @@ body[data-page="home"] .work-grid .project-card .tag-list {
   .roadmap-list p {
     grid-column: 2;
   }
+
 }
 
 @media (max-width: 520px) {
