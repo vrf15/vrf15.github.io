@@ -142,6 +142,45 @@
           </div>
           <p class="detail-note"><small>NOTE: I currently use .env files for local environment variables and secrets management during development. I am planning on incorporating Kubernetes to improve deployment structure and manage secrets more securely as projects move closer to production-style environments.</small></p>
         </article>
+        <article class="outline-block detail-card de-project-detail-section de-project-weather">
+          <div class="de-project-heading">
+            <h3>WhetherX</h3>
+            <p class="de-project-domain">Weather Data</p>
+          </div>
+          <div class="de-project-fields">
+            <p><strong>Purpose:</strong> Weather analytics pipeline that ingests forecast and observed data to measure prediction accuracy across regions and time windows.</p>
+            <p><strong>Pipeline design:</strong> API ingestion loads weather data into S3 Lake and RDS PostgreSQL. dbt models build structured layers with validation checks (schema tests, accepted-value constraints, freshness checks) to catch data-quality issues before they reach reporting.</p>
+            <p><strong>Tools used:</strong> API ingestion, S3 Lake, RDS PostgreSQL, dbt, and dbt tests.</p>
+            <p><strong>Demonstrates:</strong> End-to-end handling of time-series API data with emphasis on data-quality enforcement — every model is tested before promotion to the reporting layer.</p>
+            <p><strong>Downstream use:</strong> Produces forecast-vs-observed accuracy datasets ready for dashboard consumption and trend analysis. Planned expansion into ML-based forecast correction modeling using the accumulated accuracy data.</p>
+          </div>
+        </article>
+        <article class="outline-block detail-card de-project-detail-section de-project-markets">
+          <div class="de-project-heading">
+            <h3>SP500 Analytics</h3>
+            <p class="de-project-domain">Financial Markets</p>
+          </div>
+          <div class="de-project-fields">
+            <p><strong>Purpose:</strong> Market-data pipeline that ingests financial data from multiple APIs and prepares it for analytics-ready reporting on S&P 500 equities.</p>
+            <p><strong>Pipeline design:</strong> Airflow orchestrates ticker-batched ingestion across multiple financial APIs with rate-limit handling, loads raw data into S3 Lake and RDS PostgreSQL, and dbt models build structured reporting layers with incremental materialization.</p>
+            <p><strong>Tools used:</strong> Financial APIs, Apache Airflow, S3 Lake, RDS PostgreSQL, and dbt.</p>
+            <p><strong>Demonstrates:</strong> Batched API ingestion at scale (handling rate limits, pagination, and partial failures across hundreds of tickers) with structured transformation into clean, query-ready tables.</p>
+            <p><strong>Downstream use:</strong> Produces reporting-ready equity datasets supporting time-series analysis, sector comparisons, and market-trend dashboards. Planned expansion into ML-driven signal detection and anomaly identification across historical price and volume data.</p>
+          </div>
+        </article>
+        <article class="outline-block detail-card de-project-detail-section de-project-defi">
+          <div class="de-project-heading">
+            <h3>SmartVault</h3>
+            <p class="de-project-domain">DeFi / Crypto</p>
+          </div>
+          <div class="de-project-fields">
+            <p><strong>Purpose:</strong> Production DeFi yield analytics infrastructure that ingests, transforms, and scores yield opportunities across multiple protocols.</p>
+            <p><strong>Pipeline design:</strong> dlt handles repeatable ingestion with dual-write to RDS PostgreSQL and S3. Airflow orchestrates scheduling via Docker/Celery/Redis. dbt shapes 15 models (49 tests) across staging, intermediate, and mart layers covering yield rates, borrow costs, and carry spreads.</p>
+            <p><strong>Tools used:</strong> dlt, Apache Airflow (Celery/Redis/Docker), dbt, RDS PostgreSQL, S3, React.</p>
+            <p><strong>Demonstrates:</strong> A mature, tested pipeline with real production patterns — dual-write for durability, comprehensive dbt test coverage, and a React dashboard (SmartVault_RiskIndex) implementing a six-dimension weighted composite risk score.</p>
+            <p><strong>Downstream use:</strong> Delivers protocol-level risk scores and carry-spread analytics that directly inform DeFi yield-allocation decisions.</p>
+          </div>
+        </article>
       </section>
     </main>
 

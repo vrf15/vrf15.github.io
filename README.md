@@ -11,6 +11,12 @@ Static GitHub Pages skeleton for a Full-Stack BI Developer portfolio.
 - `contact.html`
 - `projects/template.html`
 
+## Active Projects
+
+| Project                   | Description                                |
+| ------------------------- | ------------------------------------------ |
+| SS Consulting `[PRIVATE]` | Client-facing data consulting engagements |
+
 ## Publishing
 
 Create a GitHub repository named `vrf15.github.io`, push this folder to the `main` branch, and enable GitHub Pages from the repository settings if needed.
