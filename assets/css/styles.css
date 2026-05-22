@@ -29,6 +29,12 @@
   --nav-bg: #1E3A2F;
   --nav-text: #F4F0E8;
 
+  /* Highlights */
+  --highlight-bg: #529A7E;
+  --highlight-bg-hover: #478A72;
+  --highlight-border: #3D765F;
+  --highlight-text: #F4F0E8;
+
   /* Spacing scale (8px mini-unit) */
   --space-1: 4px;
   --space-2: 8px;
@@ -594,6 +600,64 @@ body[data-page="home"] .path-grid .capability-card p {
   font-size: clamp(1.35rem, 2vw, 1.75rem);
 }
 
+/* ── Highlights grid ── */
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.highlight-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  min-height: 188px;
+  padding: var(--space-6);
+  border: none;
+  border-radius: var(--radius-md);
+  background: var(--highlight-bg);
+  color: var(--highlight-text);
+  text-align: center;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+.highlight-card h3 {
+  margin: 0;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: clamp(3rem, 4vw, 3.375rem);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.05;
+  text-transform: none;
+  color: var(--highlight-text);
+}
+
+.highlight-card p {
+  margin: var(--space-7) 0 0;
+  max-width: 34ch;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--highlight-text);
+}
+
+.highlight-card:hover {
+  background: var(--highlight-bg-hover);
+  transform: translateY(-2px);
+}
+
+.highlight-card:focus-visible {
+  background: var(--highlight-bg-hover);
+  transform: translateY(-2px);
+  outline: 2px solid var(--interactive);
+  outline-offset: 2px;
+}
+
 .capability-card:hover {
   border-color: var(--interactive);
   background: var(--interactive);
@@ -1136,6 +1200,10 @@ body[data-page="home"] .site-footer {
   .path-grid-secondary .capability-card:last-child {
     grid-column: auto;
   }
+
+  .highlights-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 860px) {
@@ -1180,6 +1248,10 @@ body[data-page="home"] .site-footer {
   .stack-preview-grid,
   .outline-grid,
   .split-section {
+    grid-template-columns: 1fr;
+  }
+
+  .highlights-grid {
     grid-template-columns: 1fr;
   }
 
