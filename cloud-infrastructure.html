@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Full-Stack BI Developer cloud and infrastructure portfolio — AWS provisioning, networking, security, and deployment configuration.">
+    <title>Cloud &amp; Infrastructure | Full-Stack BI Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body data-page="cloud-infrastructure">
+    <header class="site-header">
+      <a class="site-title" href="index.html">VRF</a>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <p class="eyebrow">Portfolio</p>
+        <h1>Cloud &amp; Infrastructure</h1>
+        <p>Cloud &amp; Infrastructure covers the AWS provisioning, networking, security, and deployment configuration underneath every pipeline and application in this portfolio.</p>
+      </section>
+
+      <section class="outline-grid detail-stack">
+        <article class="outline-block detail-card overview-card">
+          <h2>Overview</h2>
+          <div class="overview-copy">
+            <p>My cloud work focuses on provisioning and configuring the AWS resources that my data pipelines and applications run on. Across projects, I set up compute, storage, database, and networking layers — and configure IAM roles, security groups, and access policies to keep things locked down.</p>
+            <p>The goal is infrastructure that is repeatable, scoped to least privilege, and documented well enough that I could tear it down and rebuild it from notes.</p>
+          </div>
+        </article>
+
+        <article class="outline-block detail-card">
+          <h2>Featured Projects</h2>
+          <div class="detail-list">
+            <section class="detail-entry">
+              <h3>WhetherX</h3>
+              <p>EC2 compute, S3 storage, RDS PostgreSQL, VPC networking, and IAM configuration supporting the weather analytics pipeline.</p>
+            </section>
+            <section class="detail-entry">
+              <h3>SP500 Analytics</h3>
+              <p>Cloud infrastructure for multi-API ingestion at scale, including rate-limit-aware compute provisioning and storage layer design.</p>
+            </section>
+            <section class="detail-entry">
+              <h3>SmartVault</h3>
+              <p>Production-pattern infrastructure with dual-write storage (S3 + RDS), Docker/Celery/Redis orchestration on EC2, and environment-level secrets management.</p>
+            </section>
+          </div>
+        </article>
+
+        <article class="outline-block detail-card">
+          <h2>AWS Services Used</h2>
+          <div class="tool-list">
+            <section class="detail-entry tool-entry">
+              <h3>EC2</h3>
+              <p>Used as cloud compute for running pipeline services, Airflow workers, and development environments.</p>
+            </section>
+            <section class="detail-entry tool-entry">
+              <h3>S3</h3>
+              <p>Used as object storage for raw and semi-structured data before loading into relational layers.</p>
+            </section>
+            <section class="detail-entry tool-entry">
+              <h3>RDS PostgreSQL</h3>
+              <p>Used as the managed relational database for ingested data, transformed tables, and analytics-ready schemas.</p>
+            </section>
+            <section class="detail-entry tool-entry">
+              <h3>VPC</h3>
+              <p>Used to isolate project resources with subnet design separating public-facing and internal services.</p>
+            </section>
+            <section class="detail-entry tool-entry">
+              <h3>IAM</h3>
+              <p>Used to scope access policies and roles to least-privilege for each service and pipeline component.</p>
+            </section>
+            <section class="detail-entry tool-entry">
+              <h3>Security Groups</h3>
+              <p>Used as instance-level firewalls to restrict inbound/outbound traffic to only required ports and sources.</p>
+            </section>
+          </div>
+        </article>
+
+        <article class="outline-block detail-card">
+          <h2>Networking &amp; Security</h2>
+          <p>Project details coming soon.</p>
+        </article>
+
+        <article class="outline-block detail-card">
+          <h2>Infrastructure as Code / Deployment</h2>
+          <p>Project details coming soon.</p>
+          <p class="detail-note"><small>NOTE: I currently use .env files for local environment variables and secrets management during development. Infrastructure provisioning is currently manual with documented steps. I am planning to incorporate Terraform for infrastructure-as-code and Kubernetes for container orchestration as projects move closer to production-style environments.</small></p>
+        </article>
+
+        <article class="outline-block detail-card">
+          <h2>Misc.</h2>
+          <p>Project details coming soon.</p>
+        </article>
+
+        <article class="outline-block detail-card cloud-project-detail-section cloud-project-whetherx">
+          <div class="cloud-project-heading">
+            <h3>WhetherX</h3>
+            <p class="cloud-project-domain">Weather Data</p>
+          </div>
+          <div class="cloud-project-fields">
+            <p><strong>Purpose:</strong> Project details coming soon.</p>
+            <p><strong>Infrastructure design:</strong> Project details coming soon.</p>
+            <p><strong>Services used:</strong> Project details coming soon.</p>
+            <p><strong>Demonstrates:</strong> Project details coming soon.</p>
+            <p><strong>Security notes:</strong> Project details coming soon.</p>
+          </div>
+        </article>
+
+        <article class="outline-block detail-card cloud-project-detail-section cloud-project-sp500">
+          <div class="cloud-project-heading">
+            <h3>SP500 Analytics</h3>
+            <p class="cloud-project-domain">Financial Markets</p>
+          </div>
+          <div class="cloud-project-fields">
+            <p><strong>Purpose:</strong> Project details coming soon.</p>
+            <p><strong>Infrastructure design:</strong> Project details coming soon.</p>
+            <p><strong>Services used:</strong> Project details coming soon.</p>
+            <p><strong>Demonstrates:</strong> Project details coming soon.</p>
+            <p><strong>Security notes:</strong> Project details coming soon.</p>
+          </div>
+        </article>
+
+        <article class="outline-block detail-card cloud-project-detail-section cloud-project-smartvault">
+          <div class="cloud-project-heading">
+            <h3>SmartVault</h3>
+            <p class="cloud-project-domain">DeFi / Crypto</p>
+          </div>
+          <div class="cloud-project-fields">
+            <p><strong>Purpose:</strong> Project details coming soon.</p>
+            <p><strong>Infrastructure design:</strong> Project details coming soon.</p>
+            <p><strong>Services used:</strong> Project details coming soon.</p>
+            <p><strong>Demonstrates:</strong> Project details coming soon.</p>
+            <p><strong>Security notes:</strong> Project details coming soon.</p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <nav class="footer-links footer-line" aria-label="Footer navigation">
+        <span>&copy; 2026 VRF</span>
+        <span aria-hidden="true">&middot;</span>
+        <a href="stack.html">Stack</a>
+        <span aria-hidden="true">&middot;</span>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
