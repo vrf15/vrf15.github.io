@@ -1,1 +1,30 @@
 inspect-png/
+
+# AI prompt / context files
+chatgpt-*.txt
+
+# Internal planning and orchestration docs
+AGENTS.md
+BUILDERS.md
+BUILD_PLAN.md
+PLANNER.md
+PLANNER_LOG.md
+
+# Environment and secrets
+.env
+.env.*
+
+# Logs
+*.log
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
